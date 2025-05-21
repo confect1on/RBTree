@@ -428,7 +428,7 @@ namespace Red_Black_Tree
         /// Используется итеративный алгоритм на стеке.
         /// </summary>
         /// <returns></returns>
-        private IEnumerable<RBTreeNode<T>> InorderTraversal()
+        private IEnumerable<RBTreeNode<T>> PreorderTraversal()
         {
             if (Root.IsLeaf) yield break; //если корень является листом, оборвать последовательность
             var stack1 = new Stack<RBTreeNode<T>>();
@@ -452,7 +452,7 @@ namespace Red_Black_Tree
         /// <returns></returns>
         public IEnumerator<RBTreeNode<T>> GetEnumerator()
         {
-            return InorderTraversal().GetEnumerator();
+            return PreorderTraversal().GetEnumerator();
         }
         
         /// <summary>
